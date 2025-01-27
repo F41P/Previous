@@ -1,9 +1,10 @@
 package main.java.org.dii.oop;
 
-import main.java.org.dii.oop.exercise03.Lesson;
+import main.java.org.dii.oop.exercise01.CarParkingSystem;
 
 public class Main {
     public static void main(String[] args) {
-        Lesson.run();
+        CarParkingSystem c = new CarParkingSystem();
+        c.run();
     }
 }
