@@ -1,11 +1,16 @@
 package main.java.org.dii.oop.exercise01;
 
-public class Lesson {
-    public static void run(){
-        Car car1 = new Car();
-        Car car2 = new Car();
+// TO DO: import Mammal
 
-        System.out.println("Car's brand is "+car1.getBrand());
-        System.out.println("Car's brand is "+car2.getBrand());
+import main.java.org.dii.oop.exercise01.animals.Mammal;
+
+public class Lesson {
+
+    public static void run() {
+        // TO DO: uncomment to test the program
+          Mammal m = new Mammal("John");
+          System.out.println(m.getName());
+          m.eat();
+          m.travel();
     }
 }

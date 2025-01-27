@@ -1,24 +1,25 @@
 package main.java.org.dii.oop.exercise03;
+import java.util.Scanner;
 
 public class Lesson {
-    public static void run(){
-        MusicAlbum a = new MusicAlbum();
-        a.displayInfo();
+    public static void run()
+    {
 
-        String ariana[] = {"we can't be friend","bye","the boy is mine"};
-        MusicAlbum b = new MusicAlbum("Eternal Sunshine", ariana);
-        b.displayInfo();
+        ChoHanGame game = new ChoHanGame();
+        Scanner input = new Scanner(System.in);
+        System.out.print("What is your name ? ");
+        String name = input.next();
+        while (!name.equals("DONE"))
+        {
+            System.out.println("Hello " + name + " Goodluck!\n ");
+            game = new ChoHanGame();
+            game.play();
+            System.out.print("What is your name? ");
+            name = input.next();
+        }
+        System.out.println("Number of players : " + game.NumPlayersCount());
+        System.out.println("Casino 's winnings : " + game.getTotal());
 
-        String sabrina[] = {"a nonsense christmas","santa doesn't known you like i do"};
-        MusicAlbum c = new MusicAlbum("Fruitcake", sabrina);
-        c.displayInfo();
-
-        String taylor[] = {"Style","Shake it off","bad blood"};
-        MusicAlbum d = new MusicAlbum("1989", taylor);
-        d.displayInfo();
-
-        String olivia[] = {"deja vu","good 4 u","traitor"};
-        MusicAlbum e = new MusicAlbum("Sour", olivia);
-        e.displayInfo();
     }
+
 }
