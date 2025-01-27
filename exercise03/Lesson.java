@@ -1,62 +1,76 @@
 package main.java.org.dii.oop.exercise03;
-import java.util.*;
-import java.io.*;
 
 public class Lesson {
-    public static String encrypt(String msg, String cw) {
-        String encryptedMessage = new String();
-        msg = msg.toUpperCase();
-        cw = cw.toUpperCase();
-        for (int i =0;i <msg.length(); i++)
-        {
-            char ch =msg.charAt(i);
-            int shift =(cw.charAt(i % cw.length()) -'A');
-            int oldPositionInAlphabet =ch -'A';
-            int newPositionInAlphabet =(oldPositionInAlphabet +shift) %26;
-            encryptedMessage =encryptedMessage +(char) (newPositionInAlphabet +'A');
-        }
-        return encryptedMessage;
+
+    public static void displayPerson(Person p) {
+        System.out.println("Name: " + p.fname +" "+ p.lname +"\nAge: "+ p.age);
+        System.out.println();
     }
 
-    public static void run() throws IOException {
-        System.out.println("Hello Exercise 3 !");
-
-        Scanner input_keyboard = new Scanner(System.in);
-
-        String codeword;
-        System.out.print("codeword: ");
-        codeword = input_keyboard.next();
-
-        String encryptedFile;
-        System.out.print("encryptedFile: ");
-        encryptedFile = "/Users/monruedeewongwanitchakun/Documents/GitHub/lab01-monruedee-F/app/src/main/java/org/dii/oop/exercise03/"+input_keyboard.next();
-
-        File outputFile = new File(encryptedFile);
-        PrintWriter output = new PrintWriter(outputFile);
-        if (!outputFile.exists())
-        {
-            System.out.println("Error: cannot open "+ encryptedFile);
-            System.exit(0);
-        }
-
-        File inputFile = new File("/Users/monruedeewongwanitchakun/Documents/GitHub/lab01-monruedee-F/app/src/main/java/org/dii/oop/exercise03/message.txt");
-        if (!inputFile.exists())
-        {
-            System.out.println("File message.txt not found");
-            System.exit(0);
-        }
-
-        Scanner input = new Scanner(inputFile);
-
-        while(input.hasNext())
-        {
-            String line = input.nextLine();
-            String encryptLine = encrypt(line, codeword);
-            output.println(encryptLine);
-        }
-
-        input.close();
-        output.close();
+    public static void displayShape(Shape x) {
+        System.out.println("Width: "+ x.width +"\nHeight: "+x.height);
+        System.out.println();
 
     }
+    public static void run(){
+
+        Person info1 = new Person();
+        info1.fname = "John";
+        info1.lname = "Doe";
+        info1.age = 24;
+
+        Person info2 = new Person();
+        info2.fname = "Emily";
+        info2.lname = "Johnson";
+        info2.age = 26;
+
+        Person info3 = new Person();
+        info3.fname = "Michael";
+        info3.lname = "Smith";
+        info3.age = 31;
+
+        Person info4 = new Person();
+        info4.fname = "James";
+        info4.lname = "Wilson";
+        info4.age = 21;
+
+        Person info5 = new Person();
+        info5.fname = "Olivia";
+        info5.lname = "Davis";
+        info5.age = 25;
+
+        Shape details1 = new Shape();
+        details1.width = 49;
+        details1.height = 156;
+
+        Shape details2 = new Shape();
+        details2.width = 58;
+        details2.height = 175;
+
+        Shape details3 = new Shape();
+        details3.width = 49;
+        details3.height = 155;
+
+        Shape details4 = new Shape();
+        details4.width = 68;
+        details4.height = 169;
+
+        Shape details5 = new Shape();
+        details5.width = 53;
+        details5.height = 165;
+
+        displayPerson(info1);
+        displayPerson(info2);
+        displayPerson(info3);
+        displayPerson(info4);
+        displayPerson(info5);
+
+        displayShape(details1);
+        displayShape(details2);
+        displayShape(details3);
+        displayShape(details4);
+        displayShape(details5);
+
+    }
+
 }

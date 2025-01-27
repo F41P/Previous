@@ -1,27 +1,19 @@
 package main.java.org.dii.oop.exercise02;
-import java.util.*;
-import java.io.*;
+
+import main.java.org.dii.oop.exercise01.Book;
 
 public class Lesson {
+    public static void run() {
+        Book myBook01 = new Book();
+        myBook01.title = "Milkman: A Novel";
+        myBook01.author = " Anna Burns";
+        myBook01.numberOfPages = 200;
+        System.out.println("The title of the book is "+myBook01.title+"\nIt's author is "+myBook01.author+"\nIt contains "+myBook01.numberOfPages);
 
-    public static void run()  throws IOException{
-
-        System.out.println("Hello Exercise 2 !");
-        File inputFile = new File("C:\\Users\\CAMT\\Documents\\GitHub\\lab01-monruedee-F\\app\\src\\main\\java\\org\\dii\\oop\\exercise02\\sdlc.txt");
-        if( ! inputFile.exists())
-        {
-            System.out.println("File file_name.txt not found ");
-            System.exit(0);
-        }
-
-        Scanner input = new Scanner(inputFile);
-
-        String line; // to hold one full line from the file
-        while (input.hasNext()) // while there is more data
-        {
-            line = input.nextLine(); // advance to next line, returns all "skipped" data
-            System.out.println(line);
-        }
-        input.close();
+        Book myBook02 = new Book();
+        myBook02.title = "The Undefeated";
+        myBook02.author = "Kwame Alexander, Kadir Nelson";
+        myBook02.numberOfPages = 300;
+        System.out.println("The title of the book is "+ myBook02.title+"\nIt's author is "+ myBook02.author+"\nIt contains "+ myBook02.numberOfPages);
     }
 }
