@@ -2,13 +2,10 @@ package main.java.org.dii.oop.exercise01;
 
 public class Lesson {
     public static void run(){
+        Car car1 = new Car();
+        Car car2 = new Car();
 
-        System.out.println("Test");
-        Book myBook = new Book();
-
-        myBook.title = "Going Down Home with Daddy";
-        myBook.author = "Starling Lyons, Daniel Minter";
-        myBook.numberOfPages = 400;
-        System.out.println("The title of the book is " + myBook.title + "\nIts author is " + myBook.author + "\nIt contains " + myBook.numberOfPages);
+        System.out.println("Car's brand is "+car1.getBrand());
+        System.out.println("Car's brand is "+car2.getBrand());
     }
 }
